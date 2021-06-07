@@ -1,0 +1,12 @@
+
+.container{
+	margin-left: 20rpx;
+}
+input{
+	margin-top: 15rpx;
+}
+button{
+	width: 500rpx;
+	margin-bottom: 50rpx;
+}
+

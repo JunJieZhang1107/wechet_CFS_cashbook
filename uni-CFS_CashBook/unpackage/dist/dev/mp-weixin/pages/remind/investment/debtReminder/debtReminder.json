@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "资金回笼提醒",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "min-slip": "/components/min-slip/min-slip"
+  }
+}

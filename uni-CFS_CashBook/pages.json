@@ -1,0 +1,211 @@
+{
+	"pages": [
+		{
+		    "path" : "pages/login/login",
+		    "style" :                                                                      
+		    {
+		        "navigationBarTitleText": "登录界面",
+		        "enablePullDownRefresh": false
+		    }
+		},
+		{
+		    "path" : "pages/remind/investment/returnOfFunds/loanAmount/loanAmount",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		
+		{
+		    "path" : "pages/remind/investment/returnOfFunds/returnOfFunds",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/remind/investment/debtReminder/debtReminder",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "资金回笼提醒",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/remind/investment/returnOfFunds/investmentRemind/detail/detail",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/remind/remind",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "投资提醒模块",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},{
+		    "path" : "pages/inandout/expenditure/expenditure",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "支出",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/Message/Message",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "账户信息",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+		    "path" : "pages/Message/details/details",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "数据详情",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/remind/investment/returnOfFunds/investmentRemind/investmentRemind",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "投资提醒",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/inandout/liabilities/liabilities",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "负债",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/inandout/income/income",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/calculate/calculate",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "查询统计",
+		        "enablePullDownRefresh": false
+		    }
+		   
+		},
+	
+		{
+		    "path" : "pages/inandout/list/list",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "列表",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/inandout/lend/lend",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "外借",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+	
+		{
+            "path" : "pages/Add/Add",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "添加账户",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		
+		{
+			"path":"pages/budget/budget",
+			"style":
+			{
+				"navigationBarTitleText": "预算管理",
+				"enablePullDownRefresh": false
+			}
+		}
+        ,{
+            "path" : "pages/Message/transfer/transfer",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "资金账户转移",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle":"custom",
+		"app-plus": {
+			"background": "#efeff4",
+			"titleNView": false
+		}
+	}
+	// 底部栏
+	// "tabBar":{
+	// 	"selectedColor":"#0000FF",
+	// 	"list":[
+	// 		{
+	// 			"pagePath":"pages/home/home",
+	// 			"text": "首页"
+	// 		},
+	// 		{
+	// 			"pagePath":"pages/inandout/inandout",
+	// 			"text":"收入支出管理"
+	// 		},
+	// 		{
+	// 			"pagePath":"pages/budget/budget",
+	// 			"text":"预算管理"
+	// 		},
+	// 		{
+	// 			"pagePath":"pages/remind/remind",
+	// 			"text":"投资提醒模块"
+	// 		},
+	// 		{
+	// 			"pagePath":"pages/calculate/calculate",
+	// 			"text":"查询统计"
+	// 		}
+	// 		]
+	// }
+}

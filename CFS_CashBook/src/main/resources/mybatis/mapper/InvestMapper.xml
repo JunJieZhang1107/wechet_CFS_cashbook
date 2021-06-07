@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.cfs_cashbook.mapper.InvestMapper">
+    <!--        public BigDecimal getAllInvestMoneyByAccountList(List<Integer> list);-->
+   <select id="getAllInvestMoneyByAccountList" resultType="BigDecimal">
+       SELECT sum(ifnull(invest_money,0.00))
+       FROM invest
+       WHERE account_id
+       IN
+       <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+           #{item}
+       </foreach>
+       AND minu_diff IS NULL
+   </select>
+    <select id="getInvestMoneyByAccountId" resultType="BigDecimal">
+        SELECT sum(ifnull(invest_money,0))
+        FROM invest
+        WHERE account_id = #{accountId}
+    </select>
+    <insert id="insert" parameterType="Invest">
+        INSERT INTO invest(account_id,product_name,invest_type,invest_money,back_time)
+        VALUES(#{accountId},#{productName},#{investType},#{investMoney},#{backTime})
+    </insert>
+    <select id="getAllInvestByAccountIds" resultType="Invest">
+        SELECT *
+        FROM invest
+        WHERE account_id
+        IN
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        AND minu_diff IS NULL
+    </select>
+    <select id="getInvestById" resultType="Invest">
+        SELECT * FROM invest
+        WHERE invest_id = #{id}
+    </select>
+    <select id="getInvestByAccountId" resultType="Invest">
+        SELECT *
+        FROM invest
+        WHERE invest_id = #{id}
+    </select>
+    <update id="update" parameterType="Invest">
+        UPDATE invest
+        SET back_money = #{backMoney},minu_diff = #{minuDiff}
+        WHERE invest_id = #{investId}
+    </update>
+    <select id="getInvestMoneyByUserId"  resultType="BigDecimal">
+        SELECT SUM(invest_money)
+        FROM invest a LEFT JOIN account b
+            ON a.account_id = b.account_id AND b.user_id = #{userId}
+        WHERE back_money IS  NULL
+        GROUP BY a.account_id
+    </select>
+</mapper>

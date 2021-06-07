@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.cfs_cashbook.mapper.BudgetMapper">
+    <select id="getMonthDataByDateAndUserId" resultType="Budget">
+        SELECT *
+        FROM budget
+        WHERE month(created) = MONTH(#{created}) AND user_id = #{userId} AND year(created) = year(#{created})
+    </select>
+    <update id="update" parameterType="Budget">
+        UPDATE budget
+        SET eat = #{eat},drink = #{drink}, play = #{play},funny = #{funny},
+            improve = #{improve}
+        WHERE id = #{id}
+    </update>
+    <insert id="save" parameterType="Budget">
+        INSERT INTO budget(user_id,eat,drink,play,funny,improve,created)
+        values (#{userId},#{eat},#{drink},#{play},#{funny},#{improve},#{created})
+    </insert>
+    <update id="updatePartMoney" parameterType="Budget">
+        UPDATE budget
+        <set>
+            <if test="eat != null">
+                eat = #{eat}+eat,
+            </if>
+            <if test="drink != null">
+                drink = #{drink}+drink,
+            </if>
+            <if test="play != null">
+                play = #{play}+play,
+            </if>
+            <if test="funny != null">
+                funny = #{funny}+funny
+            </if>
+            <if test="improve != null">
+                improve = #{improve}+improve
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+</mapper>

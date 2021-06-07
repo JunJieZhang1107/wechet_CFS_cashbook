@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.cfs_cashbook.mapper.AccountMapper">
+    <insert id="insert" parameterType="Account">
+        INSERT INTO account(account_name,account_free_money,user_id) VALUES (#{accountName},#{accountFreeMoney},#{userId})
+    </insert>
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM account WHERE account_id = #{accountId}
+    </delete>
+    <update id="update" parameterType="Account">
+        UPDATE account
+        <set>
+            <if test="accountName != null">
+                account_name = #{accountName},
+            </if>
+            <if test="accountFreeMoney != null">
+                account_free_money = #{accountFreeMoney}+account_free_money
+            </if>
+        </set>
+        WHERE account_id = #{accountId}
+    </update>
+    <update id="updateMoney" parameterType="Account">
+        UPDATE account
+        <set>
+            <if test="accountName != null">
+                account_name = #{accountName},
+            </if>
+            <if test="accountFreeMoney != null">
+                account_free_money = #{accountFreeMoney}
+            </if>
+        </set>
+        WHERE account_id = #{accountId}
+    </update>
+    <select id="accountExist" resultType="Integer">
+        SELECT count(*)
+        FROM account
+        WHERE account_name = #{accountName} AND user_id = #{userId}
+    </select>
+    <select id="getAllCountIdByUserId" resultType="Integer">
+        SELECT account_id FROM account WHERE user_id = #{userId}
+    </select>
+    <select id="getAllFreeMoneyByUserId" resultType="BigDecimal">
+        SELECT ifnull(SUM(account_free_money),0.00) FROM account GROUP BY user_id HAVING user_id = #{userId}
+    </select>
+    <select id="getAllAccountByUserId" resultType="Account">
+        SELECT * FROM account WHERE user_id = #{userId}
+    </select>
+    <select id="getFreeMoneyByAccountId" resultType="BigDecimal">
+        SELECT ifnull(account_free_money,0.00)
+        FROM account
+        WHERE account_id = #{accountId}
+    </select>
+    <update id="updateDelteIncomeOutgo" >
+        UPDATE account
+        SET account_free_money = account_free_money + #{money}
+        WHERE account_id = #{accountId}
+    </update>
+    <select id="getAccountNameByAccountId" resultType="Account">
+        SELECT *
+        FROM account
+        WHERE account_id = #{accountId}
+    </select>
+    <update id="miuMoney" >
+        UPDATE account
+        SET account_free_money = account_free_money - #{money}
+        WHERE account_id = #{accountId}
+    </update>
+</mapper>

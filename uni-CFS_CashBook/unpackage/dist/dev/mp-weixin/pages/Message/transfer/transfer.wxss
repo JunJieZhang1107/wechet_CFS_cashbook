@@ -1,0 +1,79 @@
+
+.navBar{
+	background-color: #0000FF;
+	width: 500rpx;
+	text-align: center;
+}
+.navBarLeft{
+	width: 250rpx;
+	text-align: center;
+	font-size: 30rpx;
+}
+.navBarTitle{
+	width: 250rpx;
+	font-size: 30rpx;
+	text-align: center;
+	background-color: #0000FF;
+}
+.navBarRight{
+	width: 250rpx;
+	text-align: center;
+	font-size: 30rpx;
+}
+.loanAmount{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.side{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	width: 100rpx;
+}
+.side>view{
+	width: 100rpx;
+	height: 100%;
+	margin-top: 100rpx;
+}
+.side>view>text{
+	width: 30rpx;
+	display: block;
+	text-align: center;
+	line-height: 50rpx;
+	padding-left: 25rpx;
+}
+.bgColor{
+	background-color: #0000FF;
+}
+.content{
+	width: 500rpx;
+	height: 100%;
+	margin-top: -650rpx;
+	margin-left: 200rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.content>view{
+	width: 250rpx;
+	height: 250rpx;
+	line-height: 250rpx;
+}
+.pickerView{
+	margin-top: 20rpx;
+}
+input{
+	display: block;
+	margin-top: 20rpx;
+}
+button{
+	width: 300rpx;
+}
+

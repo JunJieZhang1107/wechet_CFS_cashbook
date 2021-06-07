@@ -1,0 +1,1 @@
+<view><view class="status_bar"></view><remind-nav-bar vue-id="2bb7ede2-1" current="{{2}}" bind:__l="__l"></remind-nav-bar><tab-bar vue-id="2bb7ede2-2" current="{{3}}" bind:__l="__l"></tab-bar></view>

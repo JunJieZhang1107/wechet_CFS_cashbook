@@ -1,0 +1,52 @@
+
+.income{
+	width: 100%;
+}
+.nav-bar{
+	width: 100%;
+	height: 44px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	border-bottom: 1px solid #AAAAAA;
+}
+.nav-bar-list{
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	        flex-grow: 1;
+	text-align: center;
+	line-height: 44px;
+}
+.bgColor{
+	background-color: #0000FF;
+}
+.bgRed{
+	background-color: red;
+}
+.income-form{
+	width: 80%;
+	height: 500rpx;
+	margin-left: 10%;
+	margin-top: 50%;
+	-webkit-transform: translate(0,-50%);
+	        transform: translate(0,-50%);
+	/* background-color: red; */
+}
+uni-forms{
+	display: block;
+	margin-top: 50rpx;
+	margin-left: 20rpx;
+}
+.pickerView,input{
+	margin-top: 15rpx;
+}
+.income-button{
+	margin-top: 50rpx;
+	font-size: 32rpx;
+	width: 500rpx;
+}
+

@@ -1,0 +1,15 @@
+
+.remind{
+	margin-top: 20rpx;
+	margin-left: 20rpx;
+}
+.pickerView{
+	margin-top: 10rpx;
+}
+input{
+	margin-top: 20rpx;
+}
+button{
+	width: 500rpx;
+}
+

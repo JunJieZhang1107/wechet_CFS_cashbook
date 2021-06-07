@@ -1,0 +1,26 @@
+
+.navBar{
+	background-color: #0000FF;
+	width: 500rpx;
+	text-align: center;
+}
+.navBarLeft{
+	width: 250rpx;
+	text-align: center;
+	font-size: 30rpx;
+}
+.navBarTitle{
+	width: 250rpx;
+	font-size: 30rpx;
+	text-align: center;
+}
+.navBarRight{
+	width: 250rpx;
+	text-align: center;
+	font-size: 30rpx;
+	background-color: #0000FF;
+}
+input{
+	border: 1px solid;
+}
+

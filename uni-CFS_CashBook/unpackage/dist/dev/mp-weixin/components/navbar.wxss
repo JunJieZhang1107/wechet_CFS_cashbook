@@ -1,0 +1,18 @@
+
+.navBarLeft{
+	/* background-color: #0000FF; */
+	width: 250rpx;
+	text-align: center;
+	font-size: 30rpx;
+}
+.navBarTitle{
+	width: 250rpx;
+	font-size: 30rpx;
+	text-align: center;
+}
+.navBarRight{
+	width: 250rpx;
+	text-align: center;
+	font-size: 30rpx;
+}
+

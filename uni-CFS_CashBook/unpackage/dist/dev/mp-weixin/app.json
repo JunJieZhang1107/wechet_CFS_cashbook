@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/remind/investment/returnOfFunds/loanAmount/loanAmount",
+    "pages/remind/investment/returnOfFunds/returnOfFunds",
+    "pages/remind/investment/debtReminder/debtReminder",
+    "pages/remind/investment/returnOfFunds/investmentRemind/detail/detail",
+    "pages/remind/remind",
+    "pages/inandout/expenditure/expenditure",
+    "pages/Message/Message",
+    "pages/home/home",
+    "pages/Message/details/details",
+    "pages/remind/investment/returnOfFunds/investmentRemind/investmentRemind",
+    "pages/inandout/liabilities/liabilities",
+    "pages/inandout/income/income",
+    "pages/calculate/calculate",
+    "pages/inandout/list/list",
+    "pages/inandout/lend/lend",
+    "pages/Add/Add",
+    "pages/budget/budget",
+    "pages/Message/transfer/transfer"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "nav-bar": "/components/navbar",
+    "tab-bar": "/components/tabbar",
+    "inan-nav-bar": "/components/inandout-nav-bar",
+    "remind-nav-bar": "/components/remind-nav-bar"
+  }
+}

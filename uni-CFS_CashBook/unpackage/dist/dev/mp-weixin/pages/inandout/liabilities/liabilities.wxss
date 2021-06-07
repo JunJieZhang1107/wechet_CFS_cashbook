@@ -1,0 +1,38 @@
+
+.nav-bar{
+	width: 100%;
+	height: 44px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	border-bottom: 1px solid #AAAAAA;
+}
+.nav-bar-list{
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	        flex-grow: 1;
+	text-align: center;
+	line-height: 44px;
+}
+.bgColor{
+	background-color: #0000FF;
+}
+.bgRed{
+	background-color: red;
+}
+.pinckerView{
+	display: block;
+	margin-top: 20rpx;
+}
+input{
+	display: block;
+	margin-top: 15rpx;
+}
+button{
+	width: 500rpx;
+}
+

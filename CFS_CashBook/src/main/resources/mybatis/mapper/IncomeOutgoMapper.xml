@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.cfs_cashbook.mapper.IncomeOutgoMapper">
+    <insert id="save" parameterType="IncomeOutgo">
+        INSERT INTO income_outgo(account_id,type,money,reason,income_outgo_time)
+        VALUES (#{accountId},#{type},#{money},#{reason},#{time});
+    </insert>
+    <select id="getAllByUserId" resultType="IncomeOutgo">
+        SELECT id,account_id, type, money,reason,time
+        FROM income_outgo a LEFT JOIN account b
+            ON a.account_id = b.account_id AND b.user_id = #{userId}
+        ORDER BY time desc
+    </select>
+    <delete id="delete" parameterType="IncomeOutgo">
+        DELETE FROM income_outgo
+        WHERE income_outgo_id = #{income_outgo_id}
+    </delete>
+
+    <select id="getSpendNumByUserId" parameterType="Integer" resultType="BigDecimal">
+        SELECT SUM(money)
+        FROM income_outgo a LEFT JOIN account b
+            ON a.account_id = b.account_id AND b.user_id = #{userId}
+        WHERE type = 0
+        GROUP BY a.account_id
+    </select>
+</mapper>

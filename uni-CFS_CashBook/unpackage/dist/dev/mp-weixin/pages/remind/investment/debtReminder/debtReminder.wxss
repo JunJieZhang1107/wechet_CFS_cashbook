@@ -1,0 +1,31 @@
+
+.lists{
+	width: 100%;
+	margin-top: 20rpx;
+}
+.content{
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.up{
+	width: 100%;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+}
+.right{
+	position: absolute;
+	right: 0;
+	color: #999999;
+}
+.scrollY{
+	height: 1000rpx;
+}
+

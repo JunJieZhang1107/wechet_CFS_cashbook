@@ -1,0 +1,22 @@
+
+.min-slip{
+	width: 100vw;
+	height: 100rpx;
+	margin: 50rpx 0;
+	overflow: hidden;
+	background: #007AFF;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.main-left{
+	height: 100%;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.main-right{
+	height: 100%;
+	text-align: center;
+}
+

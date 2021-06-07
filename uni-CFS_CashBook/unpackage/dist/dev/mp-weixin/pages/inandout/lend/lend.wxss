@@ -1,0 +1,19 @@
+
+.pinckerView {
+	display: block;
+	margin-top: 20rpx;
+}
+input {
+	display: block;
+	margin-top: 15rpx;
+	border: none;
+}
+.lend {
+	display: block;
+	margin-top: 20rpx;
+	margin-left: 20rpx;
+}
+button {
+	width: 500rpx;
+}
+

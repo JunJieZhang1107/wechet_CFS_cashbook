@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.cfs_cashbook.mapper.BorrowMapper">
+<!--    public BigDecimal getBorrowMoneyByAccountId(List<Integer> list);-->
+    <select id="getBorrowMoneyByAccountIdList" resultType="BigDecimal">
+        SELECT ifnull(sum(borrow_money),0.00)
+        FROM borrow
+        WHERE account_id IN
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+    <select id="getBorrowMoneyByAccountId" resultType="BigDecimal">
+        SELECT sum(ifnull(borrow_money,0.00))
+        FROM borrow
+        WHERE account_id = #{accountId}
+    </select>
+    <insert id="save" parameterType="Borrow">
+        INSERT INTO borrow(account_id,borrow_money,borrow_name,back_time)
+        VALUES (#{accountId},#{borrowMoney},#{borrowName},#{backTime})
+    </insert>
+    <select id="getBorrowsByAccountIds" resultType="Borrow">
+        SELECT *
+        FROM borrow
+        WHERE account_id IN
+        <foreach collection="accountIds" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        ORDER BY back_time asc
+    </select>
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM borrow
+        WHERE borrow_id = #{id}
+    </delete>
+</mapper>

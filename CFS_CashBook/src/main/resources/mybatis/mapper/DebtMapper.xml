@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jay.cfs_cashbook.mapper.DebtMapper">
+    <select id="getDebtByAccountList" resultType="BigDecimal">
+        SELECT sum(ifnull(debt_pay,0.00))
+        FROM debt
+        WHERE account_id IN
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        AND is_pay = 0
+
+    </select>
+    <select id="getDebtsByAccountList" resultType="Debt">
+        SELECT *
+        FROM debt
+        WHERE account_id IN
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+            AND is_pay = 0
+    </select>
+    <select id="getAccountIdByDebtId" resultType="Integer">
+        SELECT account_id FROM debt WHERE debt_id = #{debtId}
+    </select>
+    <update id="debtPaidByDebtId" parameterType="Integer">
+        UPDATE debt SET is_pay = 1 WHERE debt_id = #{debtId}
+    </update>
+    <select id="getDebtPayByAccountId" resultType="BigDecimal">
+        SELECT sum(ifnull(debt_pay,0.00))
+        FROM debt
+        WHERE account_id = #{accountId}
+    </select>
+    <insert id="insert" parameterType="Debt">
+        INSERT INTO debt(account_id,debt_pay,pay_time,is_pay)
+        VALUES (#{accountId},#{debtPay},#{payTime},#{isPay})
+    </insert>
+    <update id="updateIsPay">
+        UPDATE debt
+        SET is_pay = #{b}
+        WHERE debt_id =#{id}
+    </update>
+</mapper>
